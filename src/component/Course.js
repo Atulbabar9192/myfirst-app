@@ -12,7 +12,7 @@ import {
     <CardText>{props.description}</CardText><Container>
     <Button color="primary " >update</Button>
     <Button color="success ml-4"  >Delete</Button>
-    <Button color="warning" onClick={startBtn}></Button>
+    
         </Container>
 
     </CardBody>
