@@ -1,21 +1,26 @@
-import React from 'react';
-import { Card,CardBody } from 'reactstrap';
+import PropTypes from 'prop-types';
+import Button from './Button';
 
+const Header = ({ title }) => {
+    const onClick = () => {
+        console.log('click');
+    }
+    return (
+        <header className='header'>
+            <h1>{title}</h1>
+            <Button color='blue' text='Add' onClick={onClick} />
 
-function Header({name}){
-    return(
-        <div>
+        </header>
 
-<Card className="my-2 bg-warning ">
-    <CardBody >
-    <h1 className="text-center my-2">Welcome to the Courses Application</h1>
-    </CardBody>
-</Card>
-        
-    
-    </div>
-
-  
-    );
+    )
 }
-export default Header;
+Header.defaultProps =
+{
+    title: 'Task Tracker',
+}
+
+Header.prototype = {
+    title: PropTypes.string.isRequired,
+}
+
+export default Header
