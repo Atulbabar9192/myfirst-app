@@ -1,38 +1,22 @@
-import React from 'react';
-import { useState } from 'react';
-import Header from './component/Header'
-import Tasks from './component/Tasks'
+import React, { useState, } from 'react'
+import EndScreen from './Component/EndScreen'
+import MainMenu from './Component/MainMenu'
+import Quiz from './Component/Quiz'
+import { QuizContext } from './Helper/Context'
+import './App.css'
 const App = () => {
-    // for making top level comp code is here pasted
-    const [tasks, setTasks] = useState([
-        {
-            id: 1,
-            text: 'Office meeting ',
-            day: '2nd nov At 2pm',
-            reminder: true
-        },
-        {
-            id: 2,
-            text: 'Doctors meeting ',
-            day: ' 7th Dec At 6.30pm',
-            reminder: true
-        },
-        {
-            id: 3,
-            text: 'School meeting ',
-            day: 'Feb 6th  At 2pm',
-            reminder: false,
-        }
-    ])
+    const [gameState, setGameState] = useState('menu')
+    const [score, setScore] = useState();
     return (
-        <div className='container'>
-
-            <Header />
-            {/* for passing tasks as props */}
-            <Tasks tasks={tasks} />
+        <div className='App'>
+            <h1 className="Quiz">Quiz App</h1>
+            <QuizContext.Provider value={{ gameState, setGameState, score, setScore }}>
+                {gameState === 'menu' && <MainMenu />}
+                {gameState === 'quiz' && <Quiz />}
+                {gameState === 'endscreen' && <EndScreen />}
+            </QuizContext.Provider>
         </div>
     )
 }
-export default App;
 
-
+export default App

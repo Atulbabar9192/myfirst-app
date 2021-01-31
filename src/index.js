@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
-ReactDOM.render( < App / > ,
+ReactDOM.render(< App />,
     document.getElementById('root')
 );
