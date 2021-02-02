@@ -14,8 +14,11 @@ const EndScreen = () => {
         <div>
             <h1> Quiz completed</h1>
             <h3>{score}/{Questions.length}</h3>
+
             <button className='endbutton' onClick={restartQuiz}>Restart Quiz</button><br /><br />
             <button className='endbutton'>Exit</button>
+
+
         </div>
     )
 }
